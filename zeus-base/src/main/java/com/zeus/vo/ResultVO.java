@@ -11,7 +11,7 @@ package com.zeus.vo;
  *
  * @author wzhang
  */
-public class ResultVo<T> {
+public class ResultVO<T> {
 
     private T data;
 

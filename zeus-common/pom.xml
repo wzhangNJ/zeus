@@ -10,13 +10,6 @@
 
 	<name>zeus-common</name>
 	<description>common</description>
-
-	<parent>
-		<groupId>zeus</groupId>
-		<artifactId>zeus-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
-		<relativePath/>
-	</parent>
 	
 	<dependencies>
 		<dependency>

@@ -6,7 +6,7 @@
  */
 package com.zeus.exception;
 
-import com.zeus.vo.ResultVo;
+import com.zeus.vo.ResultVO;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,25 +18,29 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    //处理自定义的异常
+    /**
+     *  处理自定义的异常
+     */
     @ExceptionHandler(BaseException.class)
     @ResponseBody
-    public ResultVo customHandler(BaseException e){
+    public ResultVO customHandler(BaseException e){
         e.printStackTrace();
-        ResultVo resultVo = new ResultVo();
+        ResultVO resultVo = new ResultVO();
         resultVo.setMsg(e.getMessage());
         resultVo.setCode(e.getErrorCode());
         resultVo.setSuccess(Boolean.FALSE);
         resultVo.setData(null);
         return resultVo;
     }
-    
-    //其他未处理的异常
+
+    /**
+     *  其他未处理的异常
+     */
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ResultVo exceptionHandler(Exception e){
+    public ResultVO exceptionHandler(Exception e){
         e.printStackTrace();
-        ResultVo resultVo = new ResultVo();
+        ResultVO resultVo = new ResultVO();
         resultVo.setMsg("系统异常");
         resultVo.setCode(-1);
         resultVo.setSuccess(Boolean.FALSE);
